@@ -30,5 +30,20 @@ module.exports = {
       { name: 'ember-cli-sass', target: '^6.0.0' },
       { name: 'broccoli-clean-css', target: '~1.1.0' }
     ]);
-   }
+   },
+
+
+  /**
+   A wrapper method to write a message with writeWarnLine or writeLine, depending on which version
+   of ember-cli is used
+
+   @param {string} msg Message to print
+   */
+  _writeInfoLine: function(msg) {
+    if (this.ui.writeWarnLine) {
+        this.ui.writeWarnLine(msg);
+    } else {
+        this.ui.writeLine(msg, 'INFO');
+    }
+}
 };
