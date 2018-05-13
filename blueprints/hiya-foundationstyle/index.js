@@ -1,6 +1,10 @@
 /* eslint-env node */
 module.exports = {
-  description: ''
+  description: '',
+
+  beforeInstall: function () {
+    return this.addPackageToProject('foundation-sites', "^6.4.3");
+  },
 
   // locals(options) {
   //   // Return custom template variables here.
