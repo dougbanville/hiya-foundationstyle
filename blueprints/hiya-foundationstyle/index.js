@@ -9,7 +9,7 @@ module.exports = {
     return this.addPackageToProject('foundation-sites', "^6.4.3");
   },
 
-  included(app) {
+  addPackagesToProject(app) {
     this._super.included.apply(this, arguments);
     this.ui.writeLine('Including external files!');
   },
