@@ -18,9 +18,13 @@ module.exports = {
 
    afterInstall(options) {
      // Perform extra work here.
-     /*var stylePath = path.join(process.cwd(), 'app', 'styles');
+     var stylePath = path.join(process.cwd(), 'app', 'styles');
+     var foundationPath = path.resolve(require.resolve('foundation-sites'), '../../../scss/');
+     var settingsPath = path.join(foundationPath, 'settings', '_settings.scss');
      var settingsFile = fs.readFileSync(settingsPath);
-     var settingsFilePath = path.join(stylePath, '_settings.scss');*/
+     var settingsFilePath = path.join(stylePath, '_settings.scss');
+
+     fs.writeFileSync(settingsFilePath, settingsFile);
 
      return this.addPackagesToProject([
       { name: 'ember-cli-sass', target: '^6.0.0' },
